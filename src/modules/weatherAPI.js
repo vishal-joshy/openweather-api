@@ -7,13 +7,17 @@ const weatherApi = (function () {
 
 	const getData = async function (cityName) {
 		const url = createUrl(cityName);
-		const response = await fetch(url, {
-			mode: 'cors',
-		});
-		const data = await response.json();
-		console.log(data);
-		const weatherData = WeatherFactory(data);
-		return weatherData;
+		try {
+			const response = await fetch(url, {
+				mode: 'cors',
+			});
+			const data = await response.json();
+			console.log(data);
+			const weatherData = WeatherFactory(data);
+			return weatherData;
+		} catch (err) {
+			console.log(err);
+		}
 	};
 
 	const WeatherFactory = function (data) {

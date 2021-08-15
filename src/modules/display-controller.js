@@ -24,14 +24,16 @@ const displayCard = (function () {
 		description.textContent = `${generalInfo.weather.description}`;
 	};
 	const updateTemperature = function (temperature) {
+		const degreeSymbol = String.fromCharCode(186);
 		const tempDisplay = document.querySelector('#temp');
-		tempDisplay.textContent = temperature.tempInCelsius.temp;
+		tempDisplay.textContent = temperature.tempInCelsius.temp + degreeSymbol + 'C';
 		const feelsLike = document.querySelector('#feels-like');
-		feelsLike.textContent = temperature.tempInCelsius.feelsLike;
+		feelsLike.textContent =
+			`Feels-like : ${temperature.tempInCelsius.feelsLike}` + degreeSymbol + 'C';
 	};
 	const updateOtherInfo = function (otherData) {
-		document.querySelector('#wind').textContent = otherData.wind;
-		document.querySelector('#humidity').textContent = otherData.humidity;
+		document.querySelector('#wind').textContent = `Wind : ${otherData.wind}MPH`;
+		document.querySelector('#humidity').textContent = `Humidity : ${otherData.humidity}%`;
 	};
 
 	return { addToDisplay };

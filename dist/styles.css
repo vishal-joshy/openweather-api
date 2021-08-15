@@ -1,3 +1,30 @@
-.row-g3{
-    float: right;
+.input-form {
+	float: right;
+	padding: 2rem;
+}
+.weather-display-container {
+	position: absolute;
+	top: 30%;
+	width: 90%;
+	margin-left: 10%;
+}
+
+#location-display {
+	font-size: 3rem;
+}
+#general-weather {
+	font-size: 2rem;
+}
+#weather-display {
+	display: flex;
+}
+#temp {
+	font-size: 60px;
+}
+#other-data-display {
+	border-left: solid black 1.5px;
+	margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
