@@ -4,46 +4,35 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-			crossorigin="anonymous"
-		/>
-		<link rel="stylesheet" href="./styles.css">
+		<link rel="stylesheet" href="./styles.css" />
 		<title>My Weather App</title>
 	</head>
 	<body>
 		<main>
-			<div>
-				<form class="input-form">
-					<div class="row g-3">
-						<div class="col-auto">
-							<label for="city-name-input" class="visually-hidden">City Name</label>
-							<input type="text" class="form-control" id="city-name-input" placeholder="Kochi" />
-						</div>
-						<div class="col-auto">
-							<button type="submit" class="btn btn-primary mb-3" id="city-form-submit">
-								submit
-							</button>
-						</div>
-					</div>
-				</form>
-			</div>
-			<div class="weather-display-container">
-				<div id="general-info">
-					<div id="location-display"></div>
-					<div id="general-weather"></div>
+			<div class="p-8 float-right">
+				<div>
+					<label for="city-name-input">City Name</label>
+					<input class="p-2 border-2 " type="text" id="city-name-input" placeholder="Kochi" />
 				</div>
-				<div id="weather-display">
-					<div id="temp">65*</div>
-					<div id="other-data-display">
+				<div class="col-auto">
+					<button type="submit" id="city-form-submit" class="float-right bg-blue-400 p-2 rounded-md border-2 m-1">submit</button>
+				</div>
+			</div>
+
+			<div class="absolute top-80 w-4/5 ml-32">
+				<div id="general-info">
+					<div id="location-display" class="text-5xl"></div>
+					<div id="general-weather" class="text-2xl"></div>
+				</div>
+				<div id="weather-display" class="flex">
+					<div id="temp" class="text-6xl">65*</div>
+					<div id="other-data-display" class="flex flex-col justify-center border-l-2 border-black ml-5">
 						<div id="feels-like">feels-like</div>
 						<div id="wind">wind</div>
 						<div id="humidity">humidity</div>
 					</div>
-
 				</div>
+			</div>
 			<script src="./main.js"></script>
 		</main>
 	</body>
